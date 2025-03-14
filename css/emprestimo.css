@@ -1,0 +1,31 @@
+.emprestimo-section {
+    background-color: #ecf0f1;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+.emprestimo-section h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.emprestimo-details {
+    background-color: #dfe6e9;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+.emprestimo-details p {
+    margin: 0.5rem 0;
+}
+
+.important-note {
+    text-align: center;
+    margin-top: 1rem;
+    font-style: italic;
+    color: #5B7F01;
+}

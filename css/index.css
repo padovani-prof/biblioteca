@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header-container {
+    /* background-image: url('assets/paginaInicial.jpg'); */
+    background-size: cover;
+    background-position: center;
+    /* clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); */
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+    position: relative;
+    animation: kenburns-top 5s ease-out both;
+}
+
+@-webkit-keyframes kenburns-top {
+    0% {
+        -webkit-transform: scale(1) translateY(0);
+                transform: scale(1) translateY(0);
+        -webkit-transform-origin: 50% 20%;
+                transform-origin: 50% 20%;
+    }
+    100% {
+        -webkit-transform: scale(1.1) translateY(-10px);
+                transform: scale(1.1) translateY(-10px);
+        -webkit-transform-origin: 50% 20%;
+                transform-origin: 50% 20%;
+    }
+}
+@keyframes kenburns-top {
+    0% {
+        -webkit-transform: scale(1) translateY(0);
+                transform: scale(1) translateY(0);
+        -webkit-transform-origin: 50% 20%;
+                transform-origin: 50% 20%;
+    }
+    100% {
+        -webkit-transform: scale(1.1) translateY(-10px);
+                transform: scale(1.1) translateY(-10px);
+        -webkit-transform-origin: 50% 20%;
+                transform-origin: 50% 20%;
+    }
+}
+
+.kenburns-top {
+    -webkit-animation: kenburns-top 5s ease-out both;
+            animation: kenburns-top 5s ease-out both;
+}
+.header-wrapper {
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.header-container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+

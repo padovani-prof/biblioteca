@@ -1,0 +1,140 @@
+.main-content {
+  padding: 2rem;
+}
+
+.about-maria-dolores {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.about-image {
+  width: 300px;
+  border-radius: 8px;
+}
+
+.text-content h2 {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.learn-more-link {
+  color: #2f855a;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.logo-meaning {
+  text-align: center;
+  padding: 2rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo-meaning h2 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.logo-image-container img {
+  max-width: 500px;
+  border-radius: 8px;
+}
+
+.logo-carousel-container {
+  position: relative;
+  max-width: 600px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.carousel img {
+  width: 100%;
+  display: block;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+
+.book-loan {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.book-loan h2 {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.book-images-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.book-images-container img {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.loan-banner {
+  background-color: #e3fcec;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.loan-banner h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.loan-banner p {
+  font-size: 1rem;
+  color: #333;
+}
+.carousel img {
+    width: 70%;
+   
+    
+    display: block;
+    margin: auto;
+}
+
