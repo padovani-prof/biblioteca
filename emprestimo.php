@@ -1,3 +1,4 @@
+<?php include_once 'dinamico.php' ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -9,8 +10,8 @@
 
     <?php
     $content = [
-        'title' => 'Empréstimo de Livros',
-        'description' => 'Conheça os procedimentos para empréstimo de livros.',
+        'title' => obter_parametro('emprestimo_banner_titulo'),
+        'description' => obter_parametro('emprestimo_banner_descricao'),
     ];
     renderHeader(
         $content['title'],
@@ -20,21 +21,29 @@
     );
     ?>
     <section class="emprestimo-section">
-        <h2>Informações de Empréstimo</h2>
-        <p>Se você deseja pegar livros emprestados na Biblioteca Comunitária Maria Dolores, por favor, veja as
-            instruções e informações abaixo:</p>
+        <h2><?= obter_parametro('emprestimo_info_titulo') ?></h2>
+        <p><?= obter_parametro('emprestimo_info_desc') ?></p>
         <div class="emprestimo-details">
-            <p><strong>Horário de Funcionamento:</strong> Segunda a Sexta, das 9h às 18h</p>
-            <p><strong>Requisitos:</strong> Documento de identificação com foto e comprovante de residência</p>
-            <p><strong>Contato:</strong> (92) 98488-2959</p>
-        </div>
-        <p class="important-note">Aproveite nosso acervo e incentive a leitura!</p>
+            <p>
+            <strong><?= obter_parametro('emprestimo_info_tihorario') ?></strong>
+            <?= obter_parametro('emprestimo_info_horario') ?>
+            </p>
+            <p>
+            <strong><?= obter_parametro('emprestimo_info_tirequisito') ?></strong>
+            <?= obter_parametro('emprestimo_info_requisito') ?>
+            </p>
+            <p>
+            <strong><?= obter_parametro('emprestimo_info_ticontato') ?></strong>
+            <?= obter_parametro('emprestimo_info_contato') ?>
+            </p>    
+        </div>  
+        <p class="important-note">
+        <?= obter_parametro('emprestimo_info_comunicado')?>
+        </p>
+        <center><a href="https://obrasocialchicoxavier.com.br/"
+                     class="learn-more-link" target="_blank">Consulte nosso acervo</a></center>
     </section>
-
-
-
     </main>
-
     <?php include 'footer.php'; ?>
 </body>
 

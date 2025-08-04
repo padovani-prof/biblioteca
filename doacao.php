@@ -1,3 +1,4 @@
+<?php include_once 'dinamico.php' ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -9,8 +10,8 @@
 
     <?php
     $content = [
-        'title' => 'Doe Agora',
-        'description' => 'Veja como sua contribuição pode fazer a diferença na Biblioteca Comunitária Maria Dolores.',
+        'title' => obter_parametro('doacao_banner_titulo'),
+        'description' => obter_parametro('doacao_banner_descricao'),
     ];
 
     renderHeader(
@@ -22,40 +23,31 @@
     ?>
 
     <main class="main-content">
-        <section class="donation-info">
-            <h2>Como Ajudar</h2>
-            <div class="donation-methods-container">
-                <div class="donation-method">
-                    <i class="fas fa-wallet donation-icon"></i>
-                    <h3>Lorem ipsum dolor sit</h3>
-                    <p>Toda contribuição, independentemente do valor, ajuda a manter nossas atividades e serviços.</p>
-                </div>
-                <div class="donation-method">
-                    <i class="fas fa-box-open donation-icon"></i>
-                    <h3>Doação de Materiais</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum placeat sapiente doloremque ab
-                        iusto possimus quis eveniet molestiae ut reiciendis dolor, quae inventore delectus porro magnam
-                        nostrum dolorem laboriosam animi.</p>
-                </div>
-                <div class="donation-method">
-                    <i class="fas fa-calendar-alt donation-icon"></i>
-                    <h3>Lorem ipsum dolor sit</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem et nobis, hic a iure aliquam alias
-                        cupiditate, corrupti unde odio ut? Deserunt qui iure ratione veniam incidunt necessitatibus
-                        aperiam! Pariatur..
-                    </p>
-                </div>
-                <div class="donation-method">
-                    <i class="fas fa-piggy-bank donation-icon"></i>
-                    <h3>Depósito Identificado</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque magnam consequatur debitis
-                        accusamus nesciunt beatae ad suscipit, explicabo repudiandae exercitationem, sit eius temporibus
-                        eaque maxime! Perferendis illo et in quisquam!.</p>
-                </div>
-            </div>
-        </section>
-
-
+    <section class="donation-info">
+        <h2><?= obter_parametro('doacao_ajudar_titulo') ?></h2>
+        <div class="donation-methods-container">
+	            <div class="donation-method">
+	            	<i class="fa-solid fa-hand-holding-dollar donation-icon"></i>   <i class="fas fa-piggy-bank donation-icon"></i>
+	                <h3><?= obter_parametro('doacao_tipoajuda_valor') ?></h3>
+	                <p><?= obter_parametro('doacao_descajuda_descvalor') ?></p>
+	            </div>
+	            <div class="donation-method">
+	                <i class="fas fa-box-open donation-icon"></i>    <i class="fa-solid fa-puzzle-piece donation-icon"></i>
+	                <h3><?= obter_parametro('doacao_tipoajuda_materiais') ?></h3>
+	                <p><?= obter_parametro('doacao_descajuda_descmateriais') ?></p>  
+	            </div>
+	            <div class="donation-method">
+	            	<!--img width="40" height="40" style="color:#335122;" src='assets/icons/solidario.svg'/-->
+	                <i class="fa-solid fa-users donation-icon"></i>   <i class="fa-solid fa-hand-point-up donation-icon"></i>
+	                <h3><?= obter_parametro('doacao_tipoajuda_voluntariado') ?></h3>
+	                <p><?= obter_parametro('doacao_descajuda_descvoluntariado') ?></p>
+	            </div>	            <div class="donation-method">
+	                <i class="fa-solid fa-handshake donation-icon"></i>   <i class="fa-solid fa-phone donation-icon"></i>
+					<h3><?= obter_parametro('doacao_tipoajuda_patrocinios') ?></h3>
+	                <p><?= obter_parametro('doacao_descajuda_descpatrocinios') ?></p>
+	            </div>
+        </div>
+    </section>
     </main>
 
     <?php include 'footer.php'; ?>

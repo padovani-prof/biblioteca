@@ -1,25 +1,32 @@
+<?php 
+error_reporting(E_ALL); // Reporta todos os erros e avisos
+ini_set('display_errors', 1); // Exibe os erros na tela
+include_once 'dinamico.php' ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <?php include 'head.php'; ?>
 
 <body>
-    <?php include 'navbar.php'; ?>
-    <?php include 'header.php'; ?>
+    <?php 
+    include 'navbar.php';
+    include 'header.php';
 
-    <?php
+    
+    
     $content = [
-        'title' => 'Nosso Time',
-        'description' => 'Conheça os membros da nossa equipe.',
+        'title' => obter_parametro('team_banner_titulo'),
+        'description' => obter_parametro('team_banner_descricao'),
     ];
 
+ /*...........................................................................
     $teamDescription = [
         'heading' => 'Nossa equipe',
         'subheading' => 'Diretoria',
     ];
     $teamMembers = [
         [
-            'name' => 'Eveli Rayane da Silva Ramos',
+            'name' =>  'Eveli Rayane da Silva Ramos',
             'role' => 'Diretora',
             'imageUrl' => 'https://picsum.photos/400?random=1',
         ],
@@ -59,44 +66,62 @@
             'imageUrl' => 'https://picsum.photos/400?random=8',
         ],
     ];
+ ...........................................................................*/
+    
     renderHeader(
         $content['title'],
         $content['description'],
         "",
         "background-image: url('assets/foto01.jpg');"
     );
+ /*...........................................................................
+ $categorias= obter_categorias_time();    //1
+    //print_r($categorias);
+    foreach ($categorias as $cat){          //2
+        echo $cat["nome"]."<br>";   	     //3
+        $equipe = obter_equipe_da_categoria($cat["id"]);//4
+        foreach ($equipe as $pessoa){      //5
+            echo $pessoa["nome"]."<br>";  //6
+        }
+    }
+ ...........................................................................*/
     ?>
-
+    
     <main class="main-content">
-        <section class="team-section">
-            <div class="team-intro">
-                <h2><?php echo $teamDescription['heading']; ?></h2>
-                <p><?php echo $teamDescription['subheading']; ?></p>
-            </div>
-
-            <div class="team-container">
-                <div class="team-member-card">
-                    <div class="image-container">
-                        <img src="assets/ethel.png" alt="Ethel Silva de Oliveira">
-                    </div>
-                    <div class="text-container">
-                        <h3>Ethel Silva de Oliveira</h3>
-                        <p class="role">Diretora Executiva</p>
-                    </div>
-                </div>
-                <div class="team-member-card">
-                    <div class="image-container">
-                        <img src="assets/autora1.png" alt="Elisangela Silva de Oliveira">
-                    </div>
-                    <div class="text-container">
-                        <h3>Elisangela Silva de Oliveira</h3>
-                        <p class="role">Diretora Admnitrativa</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-        <section class="team-section">
+    <!--...........................................................................
+    h2><?= $teamDescription['heading']; ?></h2
+...........................................................................-->
+        <!-- colocar codigo aqui -->
+        <section class="team-section"> <!-- cada categoria começa aqui -->
+        <?php
+        $categorias= obter_categorias_time();  //1
+        foreach ($categorias as $cat){ //2
+        ?>        
+		
+			<div class="team-intro">
+				<p><?= $cat["nome"]."<br>";?></p>      
+			</div>
+			<div class="team-container">
+				<?php
+				$equipe = obter_equipe_da_categoria($cat["id"]); //4
+				foreach ($equipe as $pessoa){ //5
+				?>              
+				<div class="team-member-card"> <!-- cada pessoa começa aqui -->
+					<div class="image-container">
+						<img src='<?= $pessoa["foto"] ?>'/>
+					</div>
+					<div class="text-container">
+						<h3><?= $pessoa["nome"]."<br>";?></h3>
+						<p class="role"><?= $pessoa["cargo"]."<br>";?></p>
+					</div>
+				</div> <!-- cada pessoa termina aqui -->
+			<?php } ?>
+			</div>         
+		<?php } ?>
+		</section> <!-- cada categoria termina aqui -->
+        
+        <!--...........................................................................
+        section class="team-section">
             <div class="team-intro">
                 <p>Voluntários e bolsistas</p>
             </div>
@@ -124,10 +149,14 @@
                 </div>
                 <?php endforeach; ?>
             </div>
-        </section>
+        
+        </section
+...........................................................................-->
     </main>
 
     <?php include 'footer.php'; ?>
 </body>
 
 </html>
+
+

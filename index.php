@@ -1,7 +1,7 @@
 <?php
-include 'dinamico.php';
 error_reporting(E_ALL); // Reporta todos os erros e avisos
 ini_set('display_errors', 1); // Exibe os erros na tela
+include_once 'dinamico.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -10,6 +10,7 @@ ini_set('display_errors', 1); // Exibe os erros na tela
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= obter_parametro('index_titulo_nomesite') ?></title>
+        <link rel="icon" type="image/x-icon" href="assets/logo_biblioteca.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/footer.css">
@@ -19,36 +20,25 @@ ini_set('display_errors', 1); // Exibe os erros na tela
     <link rel="stylesheet" href="css/localizacao.css">
     <link rel="stylesheet" href="css/noticias.css">
     <link rel="stylesheet" href="css/emprestimo.css">
-
-
-
 </head>
 
 <body>
-
     <?php include 'navbar.php'; ?>
     <?php include 'header.php'; ?>
-
     <?php
     renderHeader(
-        "Biblioteca Comunitária Maria Dolores",
-        "Promover um ponto de cultura .",
+        obter_parametro('index_banner_titulo'),
+        obter_parametro('index_banner_descricao'),
         "", 
         // "background-image: url('assets/paginaInicial.jpg');" 
     );
     ?>
-
-    <main>
+    <main class="main-content">
         <?php include 'sobre.php'; ?>
         <?php include 'noticias.php'; ?>
         <?php include 'partners.php'; ?>
         <?php include 'localizacao.php'; ?>
-
-
     </main>
-
     <?php include 'footer.php'; ?>
-
 </body>
-
 </html>

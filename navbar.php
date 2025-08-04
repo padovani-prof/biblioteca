@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
+<?php include_once 'dinamico.php' ?>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navegação e Modal</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/nav.css">
 </head>
@@ -19,12 +14,12 @@
                 <i class="fas fa-bars"></i>
             </button>
             <div class="menu" id="menu">
-                <a href="index.php" class="menu-item">INÍCIO</a>
-                <a href="team.php" class="menu-item">NOSSO TIME</a>
-                <a href="how_it_started.php" class="menu-item">COMO TUDO COMEÇOU</a>
-                <a href="doacao.php" class="menu-item">DOE AGORA</a>
-                <a href="activities.php" class="menu-item">ATIVIDADES</a>
-                <a href="emprestimo.php" class="menu-item">EMPRÉSTIMOS</a>
+                <a href="index.php" class="menu-item"><?= obter_parametro('navbar_menu_inicio')?></a>
+                <a href="team.php" class="menu-item"><?= obter_parametro('navbar_menu_time')?></a>
+                <a href="how_it_started.php" class="menu-item"><?= obter_parametro('navbar_menu_comecou')?></a>
+                <a href="doacao.php" class="menu-item"><?= obter_parametro('navbar_menu_doe')?></a>
+                <a href="activities.php" class="menu-item"><?= obter_parametro('navbar_menu_atividades')?></a>
+                <a href="emprestimo.php" class="menu-item"><?= obter_parametro('navbar_menu_emprestimo')?></a>
             </div>
         </div>
     </nav>

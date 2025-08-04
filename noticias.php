@@ -1,45 +1,29 @@
-<section class="noticias-section">
-    <div style="display: block;"><h2>Últimas Notícias</h2></div>
+<section class="noticias-section" >
+    <!--div style="display: block;"-->
+    <h2><?= obter_parametro('index_noticias_titulo') ?></h2>
+    
     <div class="noticias-content">
-        
 
+<?php 
+ 	$noticia = obter_noticia();
+    foreach ($noticia as $ntc){
+?>
         <div class="noticia-item">
+			<div class="image-container">
+				<img src='<?= $ntc["foto_miniatura"] ?>' width="100%">
+			</div>
             <div class="noticia-card">
-                <h3>Novo projeto de leitura</h3>
-                <p class="data">10 de Novembro de 2024</p>
-                <p class="descricao">Estamos lançando um novo projeto de incentivo à leitura para crianças e jovens.</p>
+                <center>
+                <h3><?= $ntc["titulo_breve"]?></h3>
+                <p class="data"><?= $ntc["data"]?></p>
+                <p class="descricao"><?= $ntc["titulo_real"]?></p>
+                </center>
             </div>
         </div>
+<?php } ?>        
+    </div>
 
-        <div class="noticia-item">
-            <div class="noticia-card">
-                <h3>Evento comunitário</h3>
-                <p class="data">5 de Novembro de 2024</p>
-                <p class="descricao">Convidamos todos para participar do evento comunitário na biblioteca.</p>
-            </div>
-        </div>
-        <div class="noticia-item">
-            <div class="noticia-card">
-                <h3>Evento comunitário</h3>
-                <p class="data">5 de Novembro de 2024</p>
-                <p class="descricao">Convidamos todos para participar do evento comunitário na biblioteca.</p>
-            </div>
-        </div>
-
-        <div class="noticia-item">
-            <div class="noticia-card">
-                <h3>Evento comunitário</h3>
-                <p class="data">5 de Novembro de 2024</p>
-                <p class="descricao">Convidamos todos para participar do evento comunitário na biblioteca.</p>
-            </div>
-        </div>
-        <div class="noticia-item">
-            <div class="noticia-card">
-                <h3>Evento comunitário</h3>
-                <p class="data">5 de Novembro de 2024</p>
-                <p class="descricao">Convidamos todos para participar do evento comunitário na biblioteca.</p>
-            </div>
-        </div>
-
+    <div>
+        <center><a href=''>Mais notícias</a></center>
     </div>
 </section>

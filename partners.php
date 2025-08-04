@@ -1,5 +1,5 @@
 <section class="partners">
-    <h2>Nossos Parceiros</h2>
+    <h2><?= obter_parametro('index_partners_titulo') ?></h2>
     <div class="partners-container">
         <div class="partner">
             <img src="assets/preview.png" alt="Parceiro 1" />
